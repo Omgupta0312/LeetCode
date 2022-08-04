@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int mirrorReflection(int p, int q) {
+        int g = __gcd(p,q);
+  	    p/=g;
+  	    q/=g;
+        if(p==q) return 1;
+        if(p%2==0){
+            return 2;
+        }
+        else{
+            return q%2;
+        }
+        return 0;
+    }
+};
