@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isPalindrome(string &s)
+    {
+        // Write your code here.
+        int i=0,j=s.size()-1;
+        while(i<=j)
+        {
+            if(s[i]!=s[j])
+                return false;
+            i++;
+            j--;
+        }
+        return true;
+    }
+    string firstPalindrome(vector<string>& words) {
+        for(auto &x:words)
+            if(isPalindrome(x))
+                return x;
+        return "";
+    }
+};
