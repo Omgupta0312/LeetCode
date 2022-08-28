@@ -28,12 +28,6 @@ public:
         for(int i=1;i<R;i++)
             helper(mat,i,0,R,C,ans);
         
-        for(auto &x:ans)
-        {
-            for(auto &y:x)
-                cout<<y<<" ";
-            cout<<endl;
-        }
        
         return ans;
     }
