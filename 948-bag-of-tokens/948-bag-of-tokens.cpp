@@ -22,7 +22,7 @@ public:
             else if(curr==0)
             {
                  j--;
-                // i++;
+                 i++;
             }
             
         }
