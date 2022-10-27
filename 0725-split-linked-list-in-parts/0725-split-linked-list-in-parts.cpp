@@ -19,21 +19,10 @@ public:
             temp=temp->next;
         }
         vector<ListNode*> ans(k,NULL);
-        if(c<=k)
-        {
-            ListNode*temp=head;int i=0;
-            while(temp!=NULL)
-            {
-                ans[i++]=temp;
-                temp=temp->next;
-                ans[i-1]->next=NULL;
-            }
-        }
-        else{
             int j=c%k;
             int n=c/k;
             int i=0;
-            ListNode*temp=head;
+            temp=head;
             while(j--)
             {
                 int x=n+1;
@@ -55,10 +44,10 @@ public:
                     prev=temp;
                     temp=temp->next;
                 }
-                prev->next=NULL;
+                if(prev!=NULL) prev->next=NULL;
                 i++;
-            }
         }
+     
         return ans;
     }
 };
