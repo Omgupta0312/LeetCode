@@ -34,19 +34,19 @@ class Solution {
                 
                 if(nr>=0 && nr<n && nc>=0 && nc<m){
                     int jump = abs(heights[r][c]-heights[nr][nc]);
-                    int newEffort = max(jump,diff);
-                    if(newEffort < dis[nr][nc]){
-                        pq.push({newEffort,{nr,nc}});
-                        dis[nr][nc]=newEffort;
-                    }
-                    // if(jump > diff && jump < dis[nr][nc]){
-                    //     pq.push({jump,{nr,nc}});
-                    //     dis[nr][nc]=jump;
-                        
-                    // }else if(jump < diff && diff < dis[nr][nc]){
-                    //     pq.push({diff,{nr,nc}});
-                    //     dis[nr][nc]=diff;
+                    // int newEffort = max(jump,diff);
+                    // if(newEffort < dis[nr][nc]){
+                    //     pq.push({newEffort,{nr,nc}});
+                    //     dis[nr][nc]=newEffort;
                     // }
+                    if(jump > diff && jump < dis[nr][nc]){
+                        pq.push({jump,{nr,nc}});
+                        dis[nr][nc]=jump;
+                        
+                    }else if(jump <= diff && diff < dis[nr][nc]){
+                        pq.push({diff,{nr,nc}});
+                        dis[nr][nc]=diff;
+                    }
                 }
             }
         }
